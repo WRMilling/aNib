@@ -1,0 +1,29 @@
+{
+  "name": "aNib",
+  "version": "0.0.1",
+  "description": "Another Node.js IRC Bot",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WRMilling/aNib.git"
+  },
+  "keywords": [
+    "IRC",
+    "BOT",
+    "Node.js"
+  ],
+  "author": "Winston Milling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WRMilling/aNib/issues"
+  },
+  "homepage": "https://github.com/WRMilling/aNib",
+  "private": true,
+  "dependencies": {
+    "irc": "^0.3.7",
+    "require-directory": "^2.0.0"
+  }
+}
