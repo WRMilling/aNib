@@ -1,31 +1,41 @@
 /*
-  Simple plugin that shows how server wide listeners are added and an 
-  example of the bindChannel function which must be written to do channel
-  level actions.
+  The current plugin format only requires that you have an array of actions exported as 'actions' as well as an init function which takes in a JSON config. The config will currently pass in trigger only.
+  
+  The actions array must define a type and a handler function which takes in a callback and the required elements for the action type you are performing (see thre node-irc documentation for returned elements). For example, a 'pm' message type takes in the mandatory callbackwith from and message. 
+
+  The callback arguments are:
+    Action
+    Target
+    Message
+
+  And it currently works with types:
+    say
+    action
+    notice
 
   This is currently in flux as the bot evolves.
 */
-function newInstance(newClient) {
-  var client = newClient;
+var self = this;
+this.config = null;
 
-  client.addListener('pm', function(from, message){
-    if (message.args[1].indexOf(".hw") == 0) {
-      client.say(from, 'Hello World.');
-    }
-  });
-
-  this.bindChannel = function (channelName) {
-    if (undefined !== channelName && null !== channelName) {
-      client.addListener('message' + channelName, function(from, to, message) {
-        if (message.args[1].indexOf(".hw") == 0) {
-          client.say(message.args[0], 'Hello World.');
-        }
-      });
-    } else {
-      return false;
-    }
-    return true;
-  };
+module.exports.init = function(config) {
+  self.config = config;
 };
-
-module.exports = newInstance;
+module.exports.actions = [
+  {
+    'type': 'message#',
+    'handler': function(callback, from, to, message) {         
+      if (message.args[1].indexOf(self.config.trigger + 'hw') > -1) {
+        callback('say', message.args[0], 'Hello World!');
+      }
+    }
+  },
+  {
+    'type': 'pm',
+    'handler': function(callback, from, message) {
+      if (message.indexOf(self.config.trigger + 'hw') === 0) {
+        callback('say', from, 'Private Hello World!');
+      }
+    }
+  }
+];
