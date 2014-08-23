@@ -1,8 +1,11 @@
 /*
-  Verions 0.0.1 of aNib: Another Node.js IRC Bot
-  Author: Winston Milling
-  Licensed: MIT
-*/
+ * Name         : aNib: Another Node.js IRC Bot
+ * Author       : Winston Milling
+ * Version      : 0.0.2
+ * Licensed     : MIT
+ * Description  : A simple IRC Bot framework that allows for multiple
+ *                plugins and channels.
+ */
 var irc = require('irc'),
   config = require('./config.js'),
   requireDir = require('require-directory'),
@@ -43,14 +46,16 @@ config.servers.forEach(function (server) {
       if (plugins.hasOwnProperty(id)) {
         var plugin = plugins[id];
         plugin.actions.forEach(function (action) {
-          if (action.type === 'message#') {
-            if (attachToChannel.hasOwnProperty(id)){
-              attachToChannel[id] = attachToChannel[id].concat(action);
+          if (action.type && action.handler) {
+            if (action.type === 'message#') {
+              if (attachToChannel.hasOwnProperty(id)){
+                attachToChannel[id] = attachToChannel[id].concat(action);
+              } else {
+                attachToChannel[id] = [].concat(action);
+              }
             } else {
-              attachToChannel[id] = [].concat(action);
+              localAttachListener(action.type, action.handler);
             }
-          } else {
-            localAttachListener(action.type, action.handler);
           }
         });
       }
