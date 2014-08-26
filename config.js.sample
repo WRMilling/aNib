@@ -1,35 +1,40 @@
 /*
-  Example configuration file for aNib: Another Node.js IRC Bot.
-
-  - Specify each server as an object in the servers array.
-  - A minimum requirement has a host, nick, and channels.
-   -Options is optional and documentation for all options can be found at: 
-      https://node-irc.readthedocs.org/en/latest/
-  - Plugins are imported by name, so if the file is 'helloworld.js', then the plugin name will be 'helloworld' for activePlugins for a channel or serverPlugins for server wide. 
-*/
+ * Example configuration file for aNib: Another Node.js IRC Bot.
+ *
+ * - Specify each server as an object in the servers array.
+ * - A minimum requirement has a host, nick, and channels.
+ * - Plugins are imported by name, so if the file is 'helloworld.js', then the plugin name will be 'helloworld' for activePlugins for a channel. 
+ */
 var config = {
   global: {
-    trigger: ''
+    trigger: '.'
   },
   servers: [
     {
       host: '',
-      nick: '',
+      nick: 'aNib',
       options: {
         userName: 'aNib-Bot',
         realName: 'Another Node.js IRC Bot',
-        password: '',
-        port: undefined,
-        secure: false, 
-        selfSigned: false, 
-        debug: false, 
-        showErrors: false
+        port: 6667,
+        debug: false,
+        showErrors: false,
+        autoRejoin: true,
+        autoConnect: true,
+        secure: false,
+        selfSigned: false,
+        certExpired: false,
+        floodProtection: false,
+        floodProtectionDelay: 1000,
+        sasl: false,
+        stripColors: false,
+        channelPrefixes: "&#",
+        messageSplit: 512
       },
       channels: [{
         channelName: '#',
         channelPlugins: []
-      }],
-      serverPlugins: []
+      }]
     }
   ]
 }
