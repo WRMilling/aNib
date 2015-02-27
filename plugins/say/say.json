@@ -1,0 +1,13 @@
+[
+  {
+    "type": "message",
+    "channel": "#",
+    "activationMessage": "Hola",
+    "response": "Hello"
+  },
+  {
+    "type": "pm",
+    "activationMessage": "PM Hola",
+    "response": "PM Hello"
+  }
+]

@@ -1,7 +1,7 @@
 /*
  * Name         : aNib: Another Node.js IRC Bot
  * Author       : Winston Milling
- * Version      : 0.0.2
+ * Version      : 0.0.4
  * Licensed     : MIT
  * Description  : A simple IRC Bot framework that allows for multiple
  *                plugins and channels.
@@ -16,6 +16,11 @@ var irc = require('irc'),
 
 // Run through each server in the configuration file. 
 config.servers.forEach(function (server) {
+  
+  if (config.global.debug) {
+    console.log("Creating server connection to " + server.host + " for " + server.nick);
+  }
+  
   var client = new irc.Client(server.host, server.nick, server.options);
 
   // When connected, loop through channels, join, and register plugins/events for that channel.
@@ -44,28 +49,58 @@ config.servers.forEach(function (server) {
     // needs to be attached and we will attach it during the channel joining state. 
     for (var id in plugins) {
       if (plugins.hasOwnProperty(id)) {
+
+        if (config.global.debug) {
+          console.log("Beginning attachments for plugin " + id);
+        }
+
         var plugin = plugins[id];
         plugin.actions.forEach(function (action) {
           if (action.type && action.handler) {
             if (action.type === 'message#') {
+
+              if (config.global.debug) {
+                console.log("Adding a channel listener to the queue");
+              }
+
               if (attachToChannel.hasOwnProperty(id)){
                 attachToChannel[id] = attachToChannel[id].concat(action);
               } else {
                 attachToChannel[id] = [].concat(action);
               }
             } else {
+
+              if (config.global.debug) {
+                console.log("Attaching a " + action.type + " listener for plugin " + id);
+              }
+
               localAttachListener(action.type, action.handler);
             }
           }
         });
+
+        if (config.global.debug) {
+          console.log("Finished attachments for plugin " + id);
+        }
       }
     }
   
     // Loop through channels, join, and bind required plugins
     server.channels.forEach(function (channel) {
+    
+      if (config.global.debug) {
+        console.log("Joining channel " + channel.channelName);
+      }
+      
       client.join(channel.channelName);
       channel.channelPlugins.forEach(function (pluginName) {
+
+        if (config.global.debug) {
+          console.log("Attaching channel listeners for plugin " + pluginName);
+        }
+
         attachToChannel[pluginName].forEach(function (action) {
+          console.log("Attaching message handler: message" + channel.channelName); 
           localAttachListener('message' + channel.channelName, action.handler);
         });
       });

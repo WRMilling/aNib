@@ -7,7 +7,8 @@
  */
 var config = {
   global: {
-    trigger: '.'
+    trigger: '',
+    debug: false
   },
   servers: [
     {
