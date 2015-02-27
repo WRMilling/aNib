@@ -1,6 +1,6 @@
 # aNib
 
-aNib stands for Another Node.js IRC Bot and I am writing it  mostly for fun, but also to give myself a reason to mess around more with Node.js.
+aNib stands for Another Node.js IRC Bot and I am writing it mostly for fun, but also to give myself a reason to mess around more with Node.js.
 
 ## Installation
 
@@ -22,19 +22,19 @@ There is only one file which needs to be configured, config.js. There is a sampl
     cp ./config.js.sample ./config.js
     vim ./config.js
 
-Note: Replace vim in the above command for the  editor of your choice. Once config.js is fully setup and saved, we can run the bot. 
+Note: Replace vim in the above command for the editor of your choice. Once config.js is fully setup and saved, we can run the bot. 
 
 ## Plugins
 
 Plugins which perform a server wide action are automatically loaded from the plugins folder if they are valid. If they have channel actions then they need to be defined in the channelPlugins array inside the config.js file for each channel you would like plugin to be active in. 
 
-There are currently two default pluins which are written as simple examples of the plugin format. They are helloworld.js and diceroll.js. To activate them, just include the exact spelling of their file name, excluding the extension, in the channelPlugins array: 
+There are currently three default pluins which are written as simple examples of the plugin format. They are helloworld.js, diceroll.js, and say.js. To activate them, just include the exact spelling of their file name, excluding the extension, in the channelPlugins array: 
 
     channelPlugins: ['helloworld', 'diceroll']
 
 ## Running
 
-Runnin the bot is simple, you can use any of the major starting methods provided by node.js including: 
+Running the bot is simple, you can use any of the major starting methods provided by node.js including: 
 
     npm start
 
