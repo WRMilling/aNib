@@ -10,17 +10,17 @@
  *
  * See helloworld.js for more  information on formatting of pluins. 
  */
-var self = this;
-this.config = null;
+var config = null;
 
-module.exports.init = function(config) {
-  self.config  = config;
+module.exports.init = function(conf) {
+  config  = conf;
 };
+
 module.exports.actions = [
   {
     'type': 'message#',
     'handler': function (callback, from, to, message) {
-      if (message.args[1].indexOf(self.config.trigger + 'roll') === 0) {
+      if (message.args[1].indexOf(config.trigger + 'roll') === 0) {
         var finalMessage = "";
         var dice = message.args[1].split(' ');
         dice.forEach(function(die){

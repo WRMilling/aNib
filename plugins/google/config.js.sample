@@ -1,0 +1,6 @@
+var config = {
+  "apiKey": "",
+  "debug": false
+}
+
+module.exports = config;

@@ -26,17 +26,17 @@
  *
  * This is fairly set for now, but may change in the future. 
  */
-var self = this;
-this.config = null;
+var config = null;
 
-module.exports.init = function(config) {
-  self.config = config;
+module.exports.init = function(conf) {
+  config = conf;
 };
+
 module.exports.actions = [
   {
     'type': 'message#',
     'handler': function(callback, from, to, message) {         
-      if (message.args[1].indexOf(self.config.trigger + 'hw') > -1) {
+      if (message.args[1].indexOf(config.trigger + 'hw') > -1) {
         callback('say', message.args[0], 'Hello World!');
       }
     }
@@ -44,7 +44,7 @@ module.exports.actions = [
   {
     'type': 'pm',
     'handler': function(callback, from, message) {
-      if (message.indexOf(self.config.trigger + 'hw') === 0) {
+      if (message.indexOf(config.trigger + 'hw') === 0) {
         callback('say', from, 'Private Hello World!');
       }
     }

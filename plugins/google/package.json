@@ -1,0 +1,26 @@
+{
+  "name": "aNib-google-api",
+  "version": "0.0.1",
+  "description": "Google-API Interface for aNib - Another Node.JS IRC Bot",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WRMilling/aNib.git"
+  },
+  "keywords": [
+    "aNib-Module",
+    "Google",
+    "API"
+  ],
+  "author": "Winston Milling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WRMilling/aNib/issues"
+  },
+  "homepage": "https://github.com/WRMilling/aNib",
+  "private": true,
+  "dependencies": {
+    "googleapis": "^1.1.0",
+    "google": "*"
+  }
+}

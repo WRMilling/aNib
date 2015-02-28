@@ -19,17 +19,17 @@
  * ]
  *
  */
-var self = this;
-this.config = null;
-this.sayings = require('./say/say.json');
-this.channelSayingMap = {};
-this.pmSayingMap = {};
+var config = null,
+    sayings = require('./say/say.json'),
+    channelSayingMap = {},
+    pmSayingMap = {};
+
 module.exports.actions = [
   {
     'type': "message#",
     'handler': function (callback, from, to, message) {
-      if (undefined !== self.channelSayingMap[message.args[1]]) {
-        self.channelSayingMap[message.args[1]].forEach(function(saying) {
+      if (undefined !== channelSayingMap[message.args[1]]) {
+        channelSayingMap[message.args[1]].forEach(function(saying) {
           if (saying.channel === "#" || saying.channel === message.args[0]) {
             callback('say', message.args[0], saying.response);
           }
@@ -40,8 +40,8 @@ module.exports.actions = [
   {
     'type': "pm",
     'handler': function (callback, from, message) {
-      if (undefined !== self.pmSayingMap[message]) {
-        self.pmSayingMap[message].forEach(function(saying) {
+      if (undefined !== pmSayingMap[message]) {
+        pmSayingMap[message].forEach(function(saying) {
           callback('say', from, saying.response);
         });
       }
@@ -49,22 +49,22 @@ module.exports.actions = [
   }
 ];
 
-module.exports.init = function(config) {
-  self.config = config;
-  self.sayings.forEach( function(saying) {
+module.exports.init = function(conf) {
+  config = conf;
+  sayings.forEach( function(saying) {
     switch (saying.type) {
       case "message":
-        if (self.channelSayingMap.hasOwnProperty(saying.activationMessage)) {
-          self.channelSayingMap[saying.activationMessage] = self.channelSayingMap[saying.activationMessage].concat(saying);
+        if (channelSayingMap.hasOwnProperty(saying.activationMessage)) {
+          channelSayingMap[saying.activationMessage] = channelSayingMap[saying.activationMessage].concat(saying);
         } else {
-          self.channelSayingMap[saying.activationMessage] = [].concat(saying);
+          channelSayingMap[saying.activationMessage] = [].concat(saying);
         }
         break;
       case "pm":
-        if (self.pmSayingMap.hasOwnProperty(saying.activationMessage)) {
-          selfpmSayingMap[saying.activationMessage] = self.pmSayingMap[saying.activationMessage].concat(saying);
+        if (pmSayingMap.hasOwnProperty(saying.activationMessage)) {
+          selfpmSayingMap[saying.activationMessage] = pmSayingMap[saying.activationMessage].concat(saying);
         } else {
-          self.pmSayingMap[saying.activationMessage] = [].concat(saying);
+          pmSayingMap[saying.activationMessage] = [].concat(saying);
         }
         break;
     }

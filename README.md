@@ -32,6 +32,15 @@ There are currently three default pluins which are written as simple examples of
 
     channelPlugins: ['helloworld', 'diceroll']
 
+## Google Plugin
+
+If you would like to use the Google plugin which provides search results and url shortening, you will need to nagivate to its plugin directory, install its dependences, and provide an API key for it. 
+
+    cd ./plugins/google
+    npm install
+    cp config.js.sample config.js
+    vim ./config.js
+
 ## Running
 
 Running the bot is simple, you can use any of the major starting methods provided by node.js including: 
