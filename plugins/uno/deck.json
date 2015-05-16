@@ -1,0 +1,434 @@
+[
+    {
+        "color": "r",
+        "value": "0"
+    },
+    {
+        "color": "r",
+        "value": "1"
+    },
+    {
+        "color": "r",
+        "value": "1"
+    },
+    {
+        "color": "r",
+        "value": "2"
+    },
+    {
+        "color": "r",
+        "value": "2"
+    },
+    {
+        "color": "r",
+        "value": "3"
+    },
+    {
+        "color": "r",
+        "value": "3"
+    },
+    {
+        "color": "r",
+        "value": "4"
+    },
+    {
+        "color": "r",
+        "value": "4"
+    },
+    {
+        "color": "r",
+        "value": "5"
+    },
+    {
+        "color": "r",
+        "value": "5"
+    },
+    {
+        "color": "r",
+        "value": "6"
+    },
+    {
+        "color": "r",
+        "value": "6"
+    },
+    {
+        "color": "r",
+        "value": "7"
+    },
+    {
+        "color": "r",
+        "value": "7"
+    },
+    {
+        "color": "r",
+        "value": "8"
+    },
+    {
+        "color": "r",
+        "value": "8"
+    },
+    {
+        "color": "r",
+        "value": "9"
+    },
+    {
+        "color": "r",
+        "value": "9"
+    },
+    {
+        "color": "r",
+        "value": "S"
+    },
+    {
+        "color": "r",
+        "value": "S"
+    },
+    {
+        "color": "r",
+        "value": "R"
+    },
+    {
+        "color": "r",
+        "value": "R"
+    },
+    {
+        "color": "r",
+        "value": "D2"
+    },
+    {
+        "color": "r",
+        "value": "D2"
+    },
+        {
+        "color": "b",
+        "value": "0"
+    },
+    {
+        "color": "b",
+        "value": "1"
+    },
+    {
+        "color": "b",
+        "value": "1"
+    },
+    {
+        "color": "b",
+        "value": "2"
+    },
+    {
+        "color": "b",
+        "value": "2"
+    },
+    {
+        "color": "b",
+        "value": "3"
+    },
+    {
+        "color": "b",
+        "value": "3"
+    },
+    {
+        "color": "b",
+        "value": "4"
+    },
+    {
+        "color": "b",
+        "value": "4"
+    },
+    {
+        "color": "b",
+        "value": "5"
+    },
+    {
+        "color": "b",
+        "value": "5"
+    },
+    {
+        "color": "b",
+        "value": "6"
+    },
+    {
+        "color": "b",
+        "value": "6"
+    },
+    {
+        "color": "b",
+        "value": "7"
+    },
+    {
+        "color": "b",
+        "value": "7"
+    },
+    {
+        "color": "b",
+        "value": "8"
+    },
+    {
+        "color": "b",
+        "value": "8"
+    },
+    {
+        "color": "b",
+        "value": "9"
+    },
+    {
+        "color": "b",
+        "value": "9"
+    },
+    {
+        "color": "b",
+        "value": "S"
+    },
+    {
+        "color": "b",
+        "value": "S"
+    },
+    {
+        "color": "b",
+        "value": "R"
+    },
+    {
+        "color": "b",
+        "value": "R"
+    },
+    {
+        "color": "b",
+        "value": "D2"
+    },
+    {
+        "color": "b",
+        "value": "D2"
+    },
+        {
+        "color": "g",
+        "value": "0"
+    },
+    {
+        "color": "g",
+        "value": "1"
+    },
+    {
+        "color": "g",
+        "value": "1"
+    },
+    {
+        "color": "g",
+        "value": "2"
+    },
+    {
+        "color": "g",
+        "value": "2"
+    },
+    {
+        "color": "g",
+        "value": "3"
+    },
+    {
+        "color": "g",
+        "value": "3"
+    },
+    {
+        "color": "g",
+        "value": "4"
+    },
+    {
+        "color": "g",
+        "value": "4"
+    },
+    {
+        "color": "g",
+        "value": "5"
+    },
+    {
+        "color": "g",
+        "value": "5"
+    },
+    {
+        "color": "g",
+        "value": "6"
+    },
+    {
+        "color": "g",
+        "value": "6"
+    },
+    {
+        "color": "g",
+        "value": "7"
+    },
+    {
+        "color": "g",
+        "value": "7"
+    },
+    {
+        "color": "g",
+        "value": "8"
+    },
+    {
+        "color": "g",
+        "value": "8"
+    },
+    {
+        "color": "g",
+        "value": "9"
+    },
+    {
+        "color": "g",
+        "value": "9"
+    },
+    {
+        "color": "g",
+        "value": "S"
+    },
+    {
+        "color": "g",
+        "value": "S"
+    },
+    {
+        "color": "g",
+        "value": "R"
+    },
+    {
+        "color": "g",
+        "value": "R"
+    },
+    {
+        "color": "g",
+        "value": "D2"
+    },
+    {
+        "color": "g",
+        "value": "D2"
+    },
+        {
+        "color": "y",
+        "value": "0"
+    },
+    {
+        "color": "y",
+        "value": "1"
+    },
+    {
+        "color": "y",
+        "value": "1"
+    },
+    {
+        "color": "y",
+        "value": "2"
+    },
+    {
+        "color": "y",
+        "value": "2"
+    },
+    {
+        "color": "y",
+        "value": "3"
+    },
+    {
+        "color": "y",
+        "value": "3"
+    },
+    {
+        "color": "y",
+        "value": "4"
+    },
+    {
+        "color": "y",
+        "value": "4"
+    },
+    {
+        "color": "y",
+        "value": "5"
+    },
+    {
+        "color": "y",
+        "value": "5"
+    },
+    {
+        "color": "y",
+        "value": "6"
+    },
+    {
+        "color": "y",
+        "value": "6"
+    },
+    {
+        "color": "y",
+        "value": "7"
+    },
+    {
+        "color": "y",
+        "value": "7"
+    },
+    {
+        "color": "y",
+        "value": "8"
+    },
+    {
+        "color": "y",
+        "value": "8"
+    },
+    {
+        "color": "y",
+        "value": "9"
+    },
+    {
+        "color": "y",
+        "value": "9"
+    },
+    {
+        "color": "y",
+        "value": "S"
+    },
+    {
+        "color": "y",
+        "value": "S"
+    },
+    {
+        "color": "y",
+        "value": "R"
+    },
+    {
+        "color": "y",
+        "value": "R"
+    },
+    {
+        "color": "y",
+        "value": "D2"
+    },
+    {
+        "color": "y",
+        "value": "D2"
+    },
+    {
+        "color": false,
+        "value": "W"
+    },
+    {
+        "color": false,
+        "value": "W"
+    },
+    {
+        "color": false,
+        "value": "W"
+    },
+    {
+        "color": false,
+        "value": "W"
+    },
+    {
+        "color": false,
+        "value": "WD4"
+    },
+    {
+        "color": false,
+        "value": "WD4"
+    },
+    {
+        "color": false,
+        "value": "WD4"
+    },
+    {
+        "color": false,
+        "value": "WD4"
+    }
+]

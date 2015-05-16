@@ -10,17 +10,17 @@ var irc = require('irc'),
   config = require('./config.js'),
   requireDir = require('require-directory'),
   requireHandler = function(plugin) {
-    plugin.init({trigger: config.global.trigger});
+    plugin.init({trigger: config.global.trigger, uno: config.uno});
   },
   plugins = requireDir(module, './plugins', {visit: requireHandler, recurse: false});
 
-// Run through each server in the configuration file. 
+// Run through each server in the configuration file.
 config.servers.forEach(function (server) {
-  
+
   if (config.global.debug) {
     console.log("Creating server connection to " + server.host + " for " + server.nick);
   }
-  
+
   var client = new irc.Client(server.host, server.nick, server.options);
 
   // When connected, loop through channels, join, and register plugins/events for that channel.
@@ -46,7 +46,7 @@ config.servers.forEach(function (server) {
 
     // Loop through plugins and attach listeners as needed.
     // For Channel listeners (message#),push to an arrray each plugin that
-    // needs to be attached and we will attach it during the channel joining state. 
+    // needs to be attached and we will attach it during the channel joining state.
     for (var id in plugins) {
       if (plugins.hasOwnProperty(id)) {
 
@@ -84,14 +84,14 @@ config.servers.forEach(function (server) {
         }
       }
     }
-  
+
     // Loop through channels, join, and bind required plugins
     server.channels.forEach(function (channel) {
-    
+
       if (config.global.debug) {
         console.log("Joining channel " + channel.channelName);
       }
-      
+
       client.join(channel.channelName);
       channel.channelPlugins.forEach(function (pluginName) {
 
@@ -100,7 +100,7 @@ config.servers.forEach(function (server) {
         }
 
         attachToChannel[pluginName].forEach(function (action) {
-          console.log("Attaching message handler: message" + channel.channelName); 
+          console.log("Attaching message handler: message" + channel.channelName);
           localAttachListener('message' + channel.channelName, action.handler);
         });
       });

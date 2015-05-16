@@ -3,7 +3,7 @@
  * and processes them for either  channel messages or private messages.
  *
  * The expected location of the messages is at plugins/say/say.json and
- * has the following format: 
+ * has the following format:
  * [
  *   {
  *     "type": "message",
@@ -62,7 +62,7 @@ module.exports.init = function(conf) {
         break;
       case "pm":
         if (pmSayingMap.hasOwnProperty(saying.activationMessage)) {
-          selfpmSayingMap[saying.activationMessage] = pmSayingMap[saying.activationMessage].concat(saying);
+          pmSayingMap[saying.activationMessage] = pmSayingMap[saying.activationMessage].concat(saying);
         } else {
           pmSayingMap[saying.activationMessage] = [].concat(saying);
         }
