@@ -1,3 +1,15 @@
+/**
+ * This is a rather hacked togeather implementation of the game UNO. It was
+ * created in response to a friend who is colorblind and the current UNO bot we
+ * were using didn't natively support any sort of colorblind mode. I didn't
+ * really want to mess with the existing code and figured this would be a fun
+ * little side project to build.
+ *
+ * There is still a bit to go, thre play card logic is a little shaky at best,
+ * there are TODO lines at the bottm of the file detailing what I know. I will
+ * hopefully have it cleaned up over the next few days.
+ */
+
 var config = null,
     fullDeck = require('./uno/deck.json'),
     util = require('./uno/util.js');
@@ -316,6 +328,8 @@ var handleMessages = function (from, message, callback) {
 //TODO: Write thre file, re-read. Do all Async
 //TODO: Make sure a Wild/Special card cannot be top card at beginning of game
 //TODO: Implement !count command
+//TODO: remove dependency on config.uno
+//TODO: Implement multiple channel games.
 
 module.exports.actions = [
   {
@@ -332,7 +346,4 @@ module.exports.actions = [
 
 module.exports.init = function(conf) {
   config = conf.uno;
-  console.log(config);
-  console.log(fullDeck);
-
 };
